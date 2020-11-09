@@ -192,3 +192,43 @@ class periodic_table(object):
     def show(self, title=None, figsize=None):
         plt = self.get_plot(title=title, figsize=figsize)
         plt.show()
+
+# Example1 on how to use
+p = periodic_table(
+    frame={
+        "shape": "Rectangle",
+        "parms": [1.0, 1.25]
+    },
+    labels={
+        "background": {
+            "+1 Elements": ['Na', 'K', 'Rb', 'Ag', 'Cs', 'Tl', 'Cu'],
+            "+3 Elements": [
+                'Al', 'Sc', 'Cr', 'Fe', 'Co', 'Ga', 'Y', 'Ru', 'Rh', 'In',
+                'Sb', 'La', 'Ce', 'Gd', 'Ir', 'Bi'
+            ],
+            "-2 Elements": ['O', 'S', 'Se', 'Te']
+        }
+    })
+pplt = p.get_plot(figsize=(9, 5))
+pplt.show()
+
+# Example2 on how to use
+plt.close()
+p = periodic_table(
+    frame={
+        "shape": "FancyBboxPatch",
+        "parms": [1.0, 1.25]
+    },
+    labels={
+        "background": {
+            "+1 Elements": ['Na', 'K', 'Rb', 'Ag', 'Cs', 'Tl', 'Cu'],
+            "+3 Elements": [
+                'Al', 'Sc', 'Cr', 'Fe', 'Co', 'Ga', 'Y', 'Ru', 'Rh', 'In',
+                'Sb', 'La', 'Ce', 'Gd', 'Ir', 'Bi'
+            ],
+            "-2 Elements": ['O', 'S', 'Se', 'Te']
+        }
+    })
+pplt = p.get_plot(figsize=(9, 5))
+pplt.savefig("periodic_table.pdf", transparent=True)
+pplt.show()

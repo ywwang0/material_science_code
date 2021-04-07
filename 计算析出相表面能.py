@@ -1,7 +1,7 @@
 import os
 from matminer.data_retrieval.retrieve_MP import MPDataRetrieval
 
-mp_id = input('Please input mp-id of the intermetallic:')
+mp_id = input('Please input mp-id of the intermetallic (for example: mp-1265):')
 mpdr = MPDataRetrieval(api_key='Bw7HdCARiXvzEWJK')
 df = mpdr.get_dataframe(criteria={"material_id": mp_id}, 
                         properties=['energy_per_atom', 'formation_energy_per_atom',
